@@ -8,11 +8,26 @@ configure_osx: true
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: false
 dockitems_remove: []
-# - Launchpad
-# - TV
-# - Podcasts
+ - Launchpad
+ - TV
+ - Podcasts
+ - Photos
+ - Calendar
+ - Mail
+ - Messages
+ - FaceTime
+ - News
 # - 'App Store'
 dockitems_persist: []
+  - name: "Microsoft Outlook"
+    path: "Applications/Microsoft Outlook.app/"
+    pos: 3
+  - name: "Microsoft Teams"
+    path: "Applications/Microsoft Teams.app/"
+    pos: 4
+  - name: "Terminal"
+    path: "Applications/Utilities/Terminal.app"
+    pos: 5
 # - name: "Sublime Text"
 #   path: "/Applications/Sublime Text.app/"
 #   pos: 5
@@ -26,7 +41,7 @@ sudoers_custom_config: ''
 
 dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
 dotfiles_repo_accept_hostkey: true
-dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
+dotfiles_repo_local_destination: ~/MacDevOps/dotfiles
 dotfiles_files:
   - .zshrc
   - .gitignore
@@ -37,8 +52,10 @@ dotfiles_files:
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
   - autoconf
+  - awscli
   - bash-completion
   - doxygen
+  - eksctl
   - gettext
   - gifsicle
   - git
@@ -47,18 +64,19 @@ homebrew_installed_packages:
   - gpg
   - httpie
   - iperf
+  - ipython
   - libevent
   - sqlite
   - mcrypt
   - nmap
   - node
   - nvm
-  - php
   - ssh-copy-id
   - cowsay
   - readline
   - openssl
   - pv
+  - pyenv
   - wget
   - wrk
   - zsh-history-substring-search
@@ -71,16 +89,12 @@ homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - chromedriver
   - docker
-  - dropbox
   - firefox
   - google-chrome
   - handbrake
   - licecap
   - sequel-ace
-  - slack
-  - sublime-text
-  - transmit
-  - vagrant
+  - visual-studio-code
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: []
