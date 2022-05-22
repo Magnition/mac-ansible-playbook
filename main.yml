@@ -24,6 +24,33 @@
     - role: geerlingguy.mac.dock
       when: configure_dock
       tags: ['dock']
+    - role: gantsign.visual-studio-code
+      users:
+        - username: "{{ remote_regular_user }}"
+          visual_studio_code_extensions:
+            - streetsidesoftware.code-spell-checker
+            - wholroyd.jinja
+            - ms-python.python
+            - AmazonWebServices.aws-toolkit-vscode
+            - loganarnett.lambda-snippets
+            - HashiCorp.terraform
+            - VisualStudioExptTeam.vscodeintellicode
+            - esbenp.prettier-vscode
+            - formulahendry.auto-rename-tag
+            - pranaygp.vscode-css-peek
+            - xabikos.JavaScriptSnippets
+            - chrmarti.regex
+          visual_studio_code_extensions_absent:
+            - seanmcbreen.Spell
+          visual_studio_code_settings_overwrite: yes
+          visual_studio_code_settings: {
+            "editor.rulers": [80, 100, 120],
+            "editor.renderWhitespace": true,
+            "files.associations": {
+              "Vagrantfile": "ruby"
+            }
+          }
+
 
   tasks:
     - import_tasks: tasks/sudoers.yml
