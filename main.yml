@@ -40,6 +40,7 @@
             - pranaygp.vscode-css-peek
             - xabikos.JavaScriptSnippets
             - chrmarti.regex
+            - snyk-security.snyk-vulnerability-scanner
           visual_studio_code_extensions_absent:
             - seanmcbreen.Spell
           visual_studio_code_settings_overwrite: yes
